@@ -34,9 +34,7 @@ export default function Sidebar({
               className="w-full p-3 rounded-lg transition-colors flex items-center gap-2"
               style={{ border: '1px solid rgba(0,0,0,0.06)' }}
             >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z" fill="currentColor"/>
-              </svg>
+              <span style={{ fontSize: 14 }}>✚</span>
               <span>New chat</span>
             </button>
           </div>
@@ -54,9 +52,7 @@ export default function Sidebar({
               >
                 <div className="px-3 py-2 rounded-lg hover:opacity-95" style={{ background: 'transparent' }}>
                   <div className="flex items-center gap-3">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4Zm2 1v6h10V5H3Zm2 1h6v1H5V6Zm0 2h4v1H5V8Z" fill="currentColor"/>
-                    </svg>
+                    <span style={{ fontSize: 14 }}>🗒️</span>
                     <span className="flex-1 truncate text-sm" style={{ color: 'var(--foreground)' }}>{conv.title}</span>
 
                     {hoveredId === conv.id && (
@@ -79,9 +75,7 @@ export default function Sidebar({
 
           <div className="p-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
             <button className="w-full p-3 rounded-lg transition-colors flex items-center gap-2 text-sm" style={{ background: 'transparent' }}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 1a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2H9v4a1 1 0 1 1-2 0V8H3a1 1 0 0 1 0-2h4V2a1 1 0 0 1 1-1Z" fill="currentColor"/>
-              </svg>
+              <span style={{ fontSize: 14 }}>⬆️</span>
               <span style={{ color: 'var(--foreground)' }}>Upgrade to Plus</span>
             </button>
           </div>
@@ -92,10 +86,9 @@ export default function Sidebar({
         onClick={onToggle}
         className="absolute top-4 left-4 z-10 p-2 rounded-lg transition-colors"
         style={{ background: 'transparent' }}
+        aria-label="Toggle sidebar"
       >
-        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 2h12M2 8h12M2 14h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
+        <span style={{ fontSize: 16 }}>☰</span>
       </button>
     </div>
   )

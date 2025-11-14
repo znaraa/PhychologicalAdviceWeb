@@ -89,41 +89,10 @@ export default function ScreenProtection() {
 
   return (
     <>
-      {/* Watermark оверлэй - бүх хуудсанд харагдана */}
-      <div 
-        className="fixed inset-0 pointer-events-none z-50 select-none"
-        style={{
-          background: `repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 200px,
-            rgba(255, 255, 255, 0.02) 200px,
-            rgba(255, 255, 255, 0.02) 400px
-          )`
-        }}
-      >
-        {/* Давхардсан watermark-ууд */}
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-gray-600/10 font-mono text-xs transform -rotate-45 whitespace-nowrap"
-            style={{
-              top: `${(i * 20) + 10}%`,
-              left: `${(i * 15) % 80}%`,
-              fontSize: '11px',
-            }}
-          >
-            🔒 CONFIDENTIAL • {userInfo}
-          </div>
-        ))}
-      </div>
+      {/* Keep protection handlers but remove visual watermark/overlays per user request */}
+      {/* Invisible protection stub (no visible backgrounds or logos) */}
+      <div style={{ display: 'none' }} aria-hidden="true" />
 
-      {/* Доод талд тогтмол watermark */}
-      <div className="fixed bottom-2 right-2 text-[10px] text-gray-600/30 font-mono pointer-events-none z-50 select-none">
-        🔒 Protected Content • {userInfo}
-      </div>
-
-      {/* CSS-ээр контентыг бага зэрэг бүдгэрүүлэх (screen record үед илүү бүдэг харагдана) */}
       <style jsx global>{`
         @media screen {
           body {

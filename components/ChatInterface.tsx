@@ -120,63 +120,67 @@ export default function ChatInterface({
 
   return (
     <div className="flex-1 flex flex-col h-full">
-      <div className="flex-1 overflow-y-auto px-4 pb-4">
-        {messages.length === 0 ? (
-          <div className="flex items-center justify-center h-full">
-            <div className="text-center max-w-2xl">
-              <h1 className="text-4xl font-bold mb-4">Gemini-gpt</h1>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                <div className="p-4 border border-gray-700 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer">
-                  <div className="font-semibold mb-2">💡 Examples</div>
-                  <div className="text-sm text-gray-400">
-                    "Explain quantum computing in simple terms"
-                  </div>
-                </div>
-                <div className="p-4 border border-gray-700 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer">
-                  <div className="font-semibold mb-2">🎯 Capabilities</div>
-                  <div className="text-sm text-gray-400">
-                    Remembers what user said earlier in the conversation
-                  </div>
-                </div>
-                <div className="p-4 border border-gray-700 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer">
-                  <div className="font-semibold mb-2">⚡ Limitations</div>
-                  <div className="text-sm text-gray-400">
-                    May occasionally generate incorrect information
-                  </div>
-                </div>
-                <div className="p-4 border border-gray-700 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer">
-                  <div className="font-semibold mb-2">🔧 Updates</div>
-                  <div className="text-sm text-gray-400">
-                    Trained on data up to April 2024
+      <div className="flex-1 px-4 pb-4 flex flex-col">
+        <div className="mx-auto w-full max-w-4xl soft-rounded" style={{ border: '1px solid rgba(0,0,0,0.06)', background: 'transparent', padding: 12 }}>
+          <div className="flex-1 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 25vh - 6rem)', paddingRight: 8 }}>
+            {messages.length === 0 ? (
+              <div className="flex items-center justify-center h-full">
+                <div className="text-center max-w-2xl">
+                  <h1 className="text-4xl font-bold mb-4">Gemini-gpt</h1>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                    <div className="p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer">
+                      <div className="font-semibold mb-2">💡 Examples</div>
+                      <div className="text-sm text-gray-500">
+                        "Explain quantum computing in simple terms"
+                      </div>
+                    </div>
+                    <div className="p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer">
+                      <div className="font-semibold mb-2">🎯 Capabilities</div>
+                      <div className="text-sm text-gray-500">
+                        Remembers what user said earlier in the conversation
+                      </div>
+                    </div>
+                    <div className="p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer">
+                      <div className="font-semibold mb-2">⚡ Limitations</div>
+                      <div className="text-sm text-gray-500">
+                        May occasionally generate incorrect information
+                      </div>
+                    </div>
+                    <div className="p-4 border border-gray-200 rounded-lg transition-colors cursor-pointer">
+                      <div className="font-semibold mb-2">🔧 Updates</div>
+                      <div className="text-sm text-gray-500">
+                        Trained on data up to April 2024
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        ) : (
-          <div className="max-w-3xl mx-auto mt-8">
-            {messages.map((message, index) => (
-              <MessageBubble key={message.id} message={message} />
-            ))}
-            {isLoading && (
-              <div className="flex items-start gap-4 p-4">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'var(--assistant-avatar)' }}>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1.5 8a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z" fill="white"/>
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <div className="flex gap-1 pt-1">
-                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '0ms', background: 'var(--muted)' }}></div>
-                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '150ms', background: 'var(--muted)' }}></div>
-                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '300ms', background: 'var(--muted)' }}></div>
+            ) : (
+              <div className="mt-8">
+                {messages.map((message) => (
+                  <MessageBubble key={message.id} message={message} />
+                ))}
+
+                {isLoading && (
+                  <div className="flex items-start gap-4 p-4">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'var(--assistant-avatar)' }}>
+                      <span style={{ fontSize: 16, color: 'white' }}>🤖</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex gap-1 pt-1">
+                        <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '0ms', background: 'var(--muted)' }} />
+                        <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '150ms', background: 'var(--muted)' }} />
+                        <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '300ms', background: 'var(--muted)' }} />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                )}
+
+                <div ref={messagesEndRef} />
               </div>
             )}
-            <div ref={messagesEndRef} />
           </div>
-        )}
+        </div>
       </div>
       <InputArea onSend={handleSendMessage} isLoading={isLoading} />
     </div>
