@@ -5,12 +5,28 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* warm palette variables */
+  --sidebar: #f5efe8; /* light sidebar for light mode */
+  --user-avatar: #d99a75;
+  --assistant-avatar: #f2c9a0;
+  --user-bubble: #f4e4da;
+  --assistant-bubble: #ebd6c8;
+  --input-bg: #f1e8e1;
+  --muted: #a58f86;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #343541;
+    --background: #3c2f2f; /* warm dark background */
     --foreground: #ffffff;
+    --sidebar: #2f2423; /* darker warm sidebar */
+    --user-avatar: #d99a75; /* peach */
+    --assistant-avatar: #f2c9a0; /* sand */
+    --user-bubble: #8c5a4b; /* terracotta */
+    --assistant-bubble: #6b4a3a; /* deeper warm brown */
+    --input-bg: #3e332f;
+    --hover: #3c2f2f;
+    --muted: #c7b7ad;
   }
 }
 

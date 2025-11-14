@@ -35,9 +35,9 @@ export default function InputArea({ onSend, isLoading }: InputAreaProps) {
   }
 
   return (
-    <div className="border-t border-gray-700 bg-[#343541] px-4 py-3">
+  <div className="border-t" style={{ borderColor: 'rgba(0,0,0,0.08)', background: 'var(--input-bg)' }}>
       <div className="max-w-3xl mx-auto">
-        <div className="relative flex items-end gap-2 bg-[#40414f] rounded-lg border border-gray-700 hover:border-gray-600 transition-colors">
+  <div className="relative flex items-end gap-2 rounded-lg border transition-colors" style={{ background: 'transparent', borderColor: 'rgba(0,0,0,0.08)' }}>
           <textarea
             ref={textareaRef}
             value={input}
@@ -58,7 +58,7 @@ export default function InputArea({ onSend, isLoading }: InputAreaProps) {
             </svg>
           </button>
         </div>
-        <p className="text-xs text-gray-500 text-center mt-2">
+        <p className="text-xs text-center mt-2" style={{ color: 'var(--muted)' }}>
           Gemini-gpt can make mistakes. Check important info.
         </p>
       </div>

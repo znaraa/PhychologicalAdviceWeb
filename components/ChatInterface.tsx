@@ -160,16 +160,16 @@ export default function ChatInterface({
             ))}
             {isLoading && (
               <div className="flex items-start gap-4 p-4">
-                <div className="w-8 h-8 rounded-full bg-[#19c37d] flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'var(--assistant-avatar)' }}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1.5 8a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0Z" fill="white"/>
                   </svg>
                 </div>
                 <div className="flex-1">
                   <div className="flex gap-1 pt-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '0ms', background: 'var(--muted)' }}></div>
+                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '150ms', background: 'var(--muted)' }}></div>
+                      <div className="w-2 h-2 rounded-full animate-bounce" style={{ animationDelay: '300ms', background: 'var(--muted)' }}></div>
                   </div>
                 </div>
               </div>

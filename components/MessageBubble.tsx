@@ -11,10 +11,8 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
   const isUser = message.role === 'user'
 
   return (
-    <div className={`flex items-start gap-4 p-4 relative ${isUser ? 'bg-[#343541]' : 'bg-[#444654]'}`}>
-      <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-        isUser ? 'bg-[#5436da]' : 'bg-[#19c37d]'
-      }`}>
+    <div className={`flex items-start gap-4 p-4 relative`} style={{ background: isUser ? 'var(--user-bubble)' : 'var(--assistant-bubble)' }}>
+      <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0`} style={{ background: isUser ? 'var(--user-avatar)' : 'var(--assistant-avatar)' }}>
         {isUser ? (
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" fill="white"/>
@@ -25,7 +23,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
           </svg>
         )}
       </div>
-      <div className="flex-1 pt-1 prose prose-invert max-w-none">
+  <div className="flex-1 pt-1 max-w-none" style={{ color: 'var(--foreground)' }}>
         <ReactMarkdown
           components={{
             p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
