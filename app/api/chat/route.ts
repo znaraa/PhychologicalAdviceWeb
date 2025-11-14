@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     console.log('🚀 Creating Gemini stream...')
     // Gemini загварыг авах (gemini-2.0-flash-lite загвар ашиглах)
     const model = genAI.getGenerativeModel({ 
-      model: 'gemini-2.0-flash-lite',
+      model: 'gemini-2.0-flash-lite', 
       // Системийн зааврыг тохируулах - зөвхөн монголоор хариулах
       systemInstruction: 'You could give me physchological advice. Answer only in Mongolian language.',
     })

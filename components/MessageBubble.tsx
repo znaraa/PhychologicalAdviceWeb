@@ -29,7 +29,7 @@ export default function MessageBubble({ message }: MessageBubbleProps) {
         <ReactMarkdown
           components={{
             p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
-            code: ({ inline, children }) => 
+            code: ({ inline, children }: any) => 
               inline ? (
                 <code className="bg-gray-700 px-1 py-0.5 rounded text-sm">{children}</code>
               ) : (
