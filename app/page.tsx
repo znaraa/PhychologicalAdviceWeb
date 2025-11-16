@@ -74,7 +74,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="flex h-screen bg-[#343541] text-white">
+  <div className="flex h-screen" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
       <Sidebar
         conversations={conversations}
         currentConversation={currentConversation}
