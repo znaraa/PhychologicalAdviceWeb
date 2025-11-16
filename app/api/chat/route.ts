@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
     const model = genAI.getGenerativeModel({ 
       model: 'gemini-2.0-flash-lite', 
       // Системийн зааврыг тохируулах - зөвхөн монголоор хариулах
-      systemInstruction: 'You could give  physchological advice for people who is living in japan. Answer only in Mongolian language.',
+      systemInstruction: 'You could give physchological advice. Answer only in Mongolian language. Provide professional, respectful responses to users no matter what issue they bring up.'
     })
     // Түүхтэй чат эхлүүлэх
     const chat = model.startChat({ history })

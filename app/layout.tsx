@@ -4,8 +4,8 @@ import ScreenProtection from '@/components/ScreenProtection'
 import RecordingDetector from '@/components/RecordingDetector'
 
 export const metadata: Metadata = {
-  title: 'Gemini-gpt Clone',
-  description: 'Gemini-gpt Clone with OpenAI API',
+  title: 'Phychological Advice AI',
+  description: 'An AI assistant that provides phychological advice in Mongolian language.',
 }
 
 export default function RootLayout({
